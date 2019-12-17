@@ -21,10 +21,13 @@
 	padding: 0;
 	color: #333333;
 	box-sizing: border-box;
+	font-family: "Helvetica Neue", Helvetica, Ariel, sans-serif;
 }
 
 a {
 	display: block;
+	text-decoration: none;
+	color: #666;
 }
 
 header {
@@ -36,6 +39,15 @@ header span {
 	color: #fff;
 }
 
+#slidemenu {
+	float: right;
+}
+
+.menu {
+	float: left;
+}
+
 footer {
+	height: 28px;
 	text-align: right;
 }
