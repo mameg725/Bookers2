@@ -13,8 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
 
 * {
 	margin: 0;
@@ -51,3 +50,21 @@ footer {
 	height: 28px;
 	text-align: right;
 }
+
+.body {
+	width: 768px;
+	height: 540px;
+}
+
+.user_menu{
+	width: 25%;
+	float: left;
+
+
+}
+
+.lists {
+	width: 75%;
+	float: left;
+}
+

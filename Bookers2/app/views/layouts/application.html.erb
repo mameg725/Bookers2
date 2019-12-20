@@ -14,9 +14,9 @@
       <span>Bookers</span>
       <div id="slidemenu">
         <% if user_signed_in? %>
-          <li class="menu"><%= link_to 'Home', user_path(current_user.id) %></li><!--マイページ-->
-          <li class="menu"><%= link_to 'User', "#" %></li>
-          <li class="menu"><%= link_to 'Books', "#" %></li>
+          <li class="menu"><%= link_to 'Home', "/" %></li><!--マイページ-->
+          <li class="menu"><%= link_to 'User', "/users" %></li>
+          <li class="menu"><%= link_to 'Books', "/books" %></li>
           <li class="menu"><%= link_to 'logout', "/users/sign_out", method: :delete %></li>
         <% else %>
           <li class="menu"><%= link_to 'Home', "/" %></li>

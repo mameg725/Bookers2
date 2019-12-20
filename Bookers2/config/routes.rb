@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
+  authenticated :user do
+    root :to => "books#index", :as => "user_authenticated_root"
+  end
+  root 'home#index'
+
+  get 'home/about' => "home#about"
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "home/about" => "home#about"
-  resources :home, only: [:index, :show, :about] do
-  	resources :book, only: [:new, :create, :index, :show]
-  end
 
-  resources :users, only: [:show]
-
-
-
-  root to: 'home#index'
-
+  resources :users, only: [:index, :show, :edit]
+  resources :books, only: [:new, :create, :index, :show, :edit, :destroy]
 end
