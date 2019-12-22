@@ -2,11 +2,12 @@
 	<div class="body">
 		<div class="user_menu">
 			<h2>User info</h2>
-				<%= form_for(@book) do |f| %>
+				<%= form_for(@user) do |f| %>
 					<label for="book_title">name</label><br>
-					<%= f.text_field :title %><br>
-					<label for="book_title">Opinion</label><br>
-					<%= f.text_area :body %><br>
+					<%= f.text_field :name %><br>
+					<%= f.attachment_field :profile_image %>
+					<label for="book_title">introduction</label><br>
+					<%= f.text_area :introduction %><br>
 					<%= f.submit 'create book' %>
 				<% end %>
 		</div>

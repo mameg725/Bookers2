@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  authenticated :user do
-    root :to => "books#index", :as => "user_authenticated_root"
-  end
   root 'home#index'
 
   get 'home/about' => "home#about"

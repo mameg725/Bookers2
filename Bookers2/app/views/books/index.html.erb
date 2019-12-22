@@ -3,6 +3,7 @@
 	<div class="body">
 		<div class="user_menu">
 			<h2>User info</h2>
+			<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
 				<table>
 					<tbody>
 					<tr>
@@ -15,7 +16,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<% if @user.id == current_user.id %><%= link_to 'edit' %><% end %>
+			<%= link_to 'edit', edit_user_path(current_user) %>
 
 			<h2>New Book</h2>
 				<%= form_for(@book) do |f| %>
@@ -41,8 +42,8 @@
 				<tbody>
 					<% @books.each do |book| %>
 					<tr>
-						<td>画像</td>
-						<td><%= link_to book.title, book_path(:id) %></td>
+						<td><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></td>
+						<td><%= link_to book.title, book_path(book) %></td>
 						<td><%= book.body %></td>
 					</tr>
 					<% end %>
