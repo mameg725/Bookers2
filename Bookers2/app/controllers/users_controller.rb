@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+	 before_action :authenticate
+	def authenticate
+		redirect_to new_user_session_path unless user_signed_in?
+	end
+
 	def index
 		@user = current_user
 		@users = User.all

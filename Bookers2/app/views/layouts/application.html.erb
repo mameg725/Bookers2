@@ -15,13 +15,13 @@
       <div id="slidemenu">
         <% if user_signed_in? %>
           <li class="menu"><%= link_to 'Home', user_path(current_user) %></li><!--マイページ-->
-          <li class="menu"><%= link_to 'User', "/users" %></li>
+          <li class="menu"><%= link_to 'Users', "/users" %></li>
           <li class="menu"><%= link_to 'Books', "/books" %></li>
           <li class="menu"><%= link_to 'logout', "/users/sign_out", method: :delete %></li>
         <% else %>
           <li class="menu"><%= link_to 'Home', "/" %></li>
           <li class="menu"><%= link_to 'About', "/home/about" %></li>
-          <li class="menu"><%= link_to 'sign up', new_user_registration_path %></li>
+          <li class="menu"><%= link_to 'Sign up', new_user_registration_path %></li>
           <li class="menu"><%= link_to 'login', new_user_session_path %></li><% end %></div></header>
     <%= yield %>
   <footer>CopyRight Infratop.inc</footer>

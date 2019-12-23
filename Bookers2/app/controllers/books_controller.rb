@@ -1,6 +1,10 @@
 class BooksController < ApplicationController
-  def new
+
+  before_action :authenticate
+  def authenticate
+  redirect_to new_user_session_path unless user_signed_in?
   end
+
 
   def create
   	@book = Book.new(book_params)
