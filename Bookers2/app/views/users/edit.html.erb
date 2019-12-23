@@ -3,10 +3,11 @@
 		<div class="user_menu">
 			<h2>User info</h2>
 				<%= form_for(@user) do |f| %>
-					<label for="book_title">name</label><br>
+					<label for="book_title">Name</label><br>
 					<%= f.text_field :name %><br>
+					<label for="book_title">Image</label><br>
 					<%= f.attachment_field :profile_image %>
-					<label for="book_title">introduction</label><br>
+					<label for="book_title">Introduction</label><br>
 					<%= f.text_area :introduction %><br>
 					<%= f.submit 'Update User' %>
 				<% end %>
