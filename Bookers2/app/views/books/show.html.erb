@@ -1,5 +1,6 @@
 <body>
 	<div class="body">
+		<p><%= notice %></p>
 		<div class="user_menu">
 			<h2>User info</h2>
 			<%= attachment_image_tag @books.user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>

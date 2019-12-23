@@ -8,9 +8,8 @@ class UsersController < ApplicationController
 	def create
 		@book = Book.new(book_params)
 		@book.user_id = current_user.id
-		if @book.save
-			redirect_to book_path(@book), notice: "aaa"
-		end
+		@book.save
+		redirect_to book_path(@book), notice:  "You have creatad book successfully."
 	end
 
 	def show
@@ -25,11 +24,11 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		@user.update(user_params)
-		redirect_to user_path(current_user)
+		redirect_to user_path, notice: "You have updated user successfully."
 	end
 
 	private
 	def user_params
-		params.require(:user).permit(:name, :profile_image_id, :introduction)
+		params.require(:user).permit(:name, :profile_image_id, :introduction, :email)
 	end
 end
