@@ -4,6 +4,14 @@ class UsersController < ApplicationController
 		redirect_to new_user_session_path unless user_signed_in?
 	end
 
+	before_action :correct_user, only: [:edit, :update]
+	def correct_user
+		@user = User.find(params[:id])
+		redirect_to user_path(current_user) unless current_user.id == @user.id
+	end
+
+
+
 	def index
 		@user = current_user
 		@users = User.all
@@ -29,11 +37,11 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		@user.update(user_params)
-		redirect_to user_path, notice: "You have updated user successfully."
+		redirect_to user_path(current_user), notice: "You have updated user successfully."
 	end
 
 	private
 	def user_params
-		params.require(:user).permit(:name, :profile_image, :introduction, :email)
+		params.require(:user).permit(:name, :profile_image, :introduction)
 	end
 end

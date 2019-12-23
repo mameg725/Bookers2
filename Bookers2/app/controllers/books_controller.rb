@@ -5,12 +5,21 @@ class BooksController < ApplicationController
   redirect_to new_user_session_path unless user_signed_in?
   end
 
+  before_action :correct_user, only: [:edit, :update]
+  def correct_user
+    @book = Book.find(params[:id])
+    redirect_to books_path unless current_user.id == @book.user.id
+  end
+
 
   def create
   	@book = Book.new(book_params)
     @book.user_id = current_user.id
-    @book.save!
-    redirect_to book_path(@book), notice:  "You have creatad book successfully."
+    if @book.save
+      redirect_to book_path(@book), notice:  "You have creatad book successfully."
+    else
+      render "index"
+    end
   end
 
   def index
@@ -31,7 +40,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
-    redirect_to book_path(@book)
+    redirect_to book_path(@book), notice: "You have updated user successfully."
   end
 
   def destroy
