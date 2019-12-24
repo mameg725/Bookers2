@@ -1,21 +1,42 @@
 <!--トップ画面-->
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Bookers</title>
-</head>
-<body>
-<p><%= notice %></p>
-<h1>welcome to Bookers!!</h1>
-<p>In Bookers,<br>
-	you can share and exchange your opinions , inpressions , and emotions<br>
-	about various books!</p>
+	<html>
+	<head>
+		<title>Bookers</title>
+	</head>
 
-<%= link_to 'Log in', new_user_session_path, class: "btn btn-lg" %>
-<% if user_signed_in? %>
-<%= link_to 'Sign up', user_path(current_user), class: "btn btn-sgn" %>
-<% else %>
-<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-sgn" %>
-<% end %>
-</body>
+	<body>
+		<div class="body">
+			<div class="container">
+				<p><%= notice %></p>
+				<div class="row">
+					<div class="top-message col-md-offset-3 col-md-6">
+						<h1>welcome to
+							<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+							<strong>Bookers !!</strong>
+						</h1>
+							<p>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Bookers,<br>
+								you can share and exchange your opinions , inpressions , and emotions<br>
+								about various books!</p>
+						<div class="btn-wrapper">
+							<div class="row">
+								<div class="btn btn-info col-xs-10 col-xs-ofifset-1 sign_in">
+									<%= link_to 'Log in', new_user_session_path %>
+								</div>
+							</div>
+							<div class="row">
+								<div class="btn btn-success col-xs-10 col-xs-ofifset-1 sign_up">
+									<% if user_signed_in? %>
+										<%= link_to 'Sign up', user_path(current_user) %>
+									<% else %>
+										<%= link_to 'Sign Up', new_user_registration_path %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

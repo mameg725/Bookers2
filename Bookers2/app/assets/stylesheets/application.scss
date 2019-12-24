@@ -20,7 +20,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	color: #333333;
 	box-sizing: border-box;
 	font-family: "Helvetica Neue", Helvetica, Ariel, sans-serif;
 }
@@ -32,41 +31,21 @@ a {
 }
 
 header {
-	height: 50px;
+	color: white;
+}
+
+.navbar-inverse{
 	background-color: #222;
+	border-color: #090909;
 }
 
-header span {
-	color: #fff;
+header .navbar-left span {
+	font-size: 20px;
+	padding-top: 10px;
 }
 
-#slidemenu {
-	float: right;
+.body{
+	margin-top: 51px;
 }
 
-.menu {
-	float: left;
-}
-
-footer {
-	height: 28px;
-	text-align: right;
-}
-
-.body {
-	width: 768px;
-	height: 540px;
-}
-
-.user_menu{
-	width: 25%;
-	float: left;
-
-
-}
-
-.lists {
-	width: 75%;
-	float: left;
-}
 

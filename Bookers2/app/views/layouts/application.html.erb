@@ -10,20 +10,69 @@
   </head>
 
   <body>
-    <header>
-      <span>Bookers</span>
-      <div id="slidemenu">
-        <% if user_signed_in? %>
-          <li class="menu"><%= link_to 'Home', user_path(current_user) %></li><!--マイページ-->
-          <li class="menu"><%= link_to 'Users', "/users" %></li>
-          <li class="menu"><%= link_to 'Books', "/books" %></li>
-          <li class="menu"><%= link_to 'logout', "/users/sign_out", method: :delete %></li>
-        <% else %>
-          <li class="menu"><%= link_to 'Home', "/" %></li>
-          <li class="menu"><%= link_to 'About', "/home/about" %></li>
-          <li class="menu"><%= link_to 'Sign up', new_user_registration_path %></li>
-          <li class="menu"><%= link_to 'login', new_user_session_path %></li><% end %></div></header>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <span>Bookers</span>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to user_path(current_user) do %>
+                  <span class="glyphicon glyphicon-home" aria-hidden="true"> Home</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "/users" do %>
+                  <span class="glyphicon glyphicon" aria-hidden="true"> Users</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "/books" do %>
+                  <span class="glyphicon glyphicon-book" aria-hidden="true">Books</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "/users/sign_out", method: :delete do %>
+                  <span class="glyphicon glyphicon-book" aria-hidden="true">logout</span>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "/" do %>
+                  <span class="glyphicon glyphicon-home" aria-hidden="true"> Home</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "/home/about" do %>
+                  <span class="glyphicon glyphicon-link" aria-hidden="true"> About</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_registration_path do %>
+                  <span class="glyphicon glyphicon-edit" aria-hidden="true"> Sign up</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_session_path do %>
+                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"> login</span>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
-  <footer>CopyRight Infratop.inc</footer>
+    <footer>
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-9">
+              <P>CopyRight Infratop.inc</P>
+            </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

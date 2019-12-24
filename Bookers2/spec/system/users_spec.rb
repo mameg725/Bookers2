@@ -9,7 +9,7 @@ describe 'ユーザー認証のテスト' do
       it '新規登録に成功する' do
         fill_in 'user[name]', with: Faker::Internet.username(specifier: 5)
         fill_in 'user[email]', with: Faker::Internet.email
-        fill_in 'user[Password]', with: 'password'
+        fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password'
         click_button 'Sign up'
 
