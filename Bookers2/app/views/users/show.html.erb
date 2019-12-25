@@ -1,11 +1,11 @@
 <body>
 	<div class="body">
 		<div class="container">
-			<p><%= notice %></p>
+			<p class="notice"><%= notice %></p>
 			<div class="row">
 				<div class="col-xs-3">
 					<h2>User info</h2>
-					<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+					<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
 					<table class="table">
 						<tbody>
 							<tr>
@@ -53,7 +53,7 @@
 						<tbody>
 							<% @user.books.each do |book| %>
 							<tr>
-								<td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></td>
+								<td><%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg",size:"40x40" %></td>
 								<td><%= link_to book.title, book_path(book) %></td>
 								<td><%= book.body %></td>
 							</tr>

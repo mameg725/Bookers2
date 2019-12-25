@@ -30,6 +30,14 @@ a {
 	color: #666;
 }
 
+a:visited{
+	color: #666;
+}
+
+a:anylink{
+	cursor: auto;
+}
+
 header {
 	color: white;
 }
@@ -48,4 +56,38 @@ header .navbar-left span {
 	margin-top: 51px;
 }
 
+.field, .actions {
+	margin-bottom: 10px;
+}
+
+.label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.notice {
+	color: green;
+}
+
+.table>thead>tr>th,
+.table>thead>tr>td,
+.table>body>tr>th,
+.table>body>tr>td {
+	padding: 8px;
+}
+
+h1 .h1{
+	font-size: 36px;
+}
+
+h1 h2 h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.edit {
+	display: inline;
+}
 
